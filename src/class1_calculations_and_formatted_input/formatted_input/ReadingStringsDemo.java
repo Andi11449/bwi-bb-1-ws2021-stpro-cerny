@@ -8,9 +8,10 @@ public class ReadingStringsDemo {
         System.out.printf(": ");
         String lastname = sc.next();
         String firstname = sc.next();
+        sc.nextLine();
         System.out.printf(": ");
         String greeting = sc.nextLine();
-        System.out.printf("%s %s %s%n", greeting, firstname, lastname);
+        System.out.printf("%s %s %s\n", greeting, firstname, lastname);
         sc.close();
     }
 }
