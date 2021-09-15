@@ -10,7 +10,25 @@ public class Milch {
         System.out.print("Haltbar: ");
         int haltbar = sc.nextInt();
 
+        if (fett < 0 || (haltbar != 0 && haltbar != 1)) {
+            System.out.println("Ungültig!");
+        }
+        else {
+            String sHaltbar = "frisch";
+            if (haltbar == 1) {
+                sHaltbar = "haltbar";
+            }
 
+            if(fett < 3) {
+                System.out.printf("Leichtmilch (%s)", sHaltbar);
+            }
+            else if (fett > 7) {
+                System.out.printf("Extravollmilch (%s)", sHaltbar);
+            }
+            else {
+                System.out.printf("Normalmilch (%s)", sHaltbar);
+            }
+        }
 
         sc.close();
     }
