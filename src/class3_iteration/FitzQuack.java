@@ -9,11 +9,18 @@ public class FitzQuack {
         int z = sc.nextInt();
 
         for(int i=1; i <= z; i++) {
-            if (i % 5 == 0) {
-                System.out.printf("Fitz ", i);
-            } else
+            if (i % 5 == 0 && i % 7 == 0) {
+                System.out.printf("FitzQuack ", i);
+            }
+            else if (i % 7 == 0) {
+                System.out.printf("    Quack ", i);
+            }
+            else if (i % 5 == 0) {
+                System.out.printf("     Fitz ", i);
+            }
+            else
             {
-                System.out.printf("%3d ", i);
+                System.out.printf("%9d ", i);
             }
             if (i%10 == 0)
                 System.out.println();
