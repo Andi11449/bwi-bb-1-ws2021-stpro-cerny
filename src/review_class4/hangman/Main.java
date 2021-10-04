@@ -8,6 +8,7 @@ public class Main {
         System.out.print("Enter a word to guess: ");
         String word = sc.nextLine();
         word = addSpaces(word);
+        System.out.println(word);
 
         // add new lines so that input is not visible anymore
         for(int i = 0; i<50; i++)
@@ -36,7 +37,8 @@ public class Main {
     }
 
     public static String addSpaces(String word) {
-        return null;
+        String newWord = word.replaceAll("([A-Za-z])", " $1");
+        return newWord;
     }
 
     public static String hideCharacters(String word, String guessedChars) {

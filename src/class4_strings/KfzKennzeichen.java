@@ -8,7 +8,8 @@ public class KfzKennzeichen {
 
         String kennzeichen = sc.nextLine();
 
-        if (kennzeichen.matches("[A-Z]{1,2}-[0-9]{1,5}[A-Z]"))
+
+        if (kennzeichen.matches(".{0,5}[A-Z]{1,2}-[0-9]{1,5}[A-Z].{0,5}"))
             System.out.println("valid!");
         else
             System.out.println("invalid!");

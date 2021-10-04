@@ -7,8 +7,8 @@ public class EvenOrOdd {
         Scanner sc = new Scanner(System.in);
         int state = 0;  //initial state
 
-        int input;
-        while ( (input = sc.nextInt())==1 || input == 0) {
+        int input = sc.nextInt();
+        while (input==1 || input == 0) {
             switch (state) {
                 case 0:
                     if (input == 1)
@@ -19,6 +19,7 @@ public class EvenOrOdd {
                         state = 0;
                     break;
             }
+            input = sc.nextInt();
         }
 
         System.out.printf("%s\n", (state==0)?"even":"odd");

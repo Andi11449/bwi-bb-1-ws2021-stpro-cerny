@@ -15,14 +15,31 @@ public class Main {
 
         System.out.println();
 
-        System.out.println(add(number1, number2));
-        System.out.println(divide(number1, number2));
+        int sum = add(number1, number2);
+        System.out.println(sum);
+        float division = divide(number1, number2);
+        System.out.println(division);
 
         sc.close();
     }
 
-    private static int divide(int number1, int number2) {
-        return number1 / number2;
+    private static int min(int number1, int number2){
+        if (number1 < number2)
+            return number1;
+        else
+            return number2;
+    }
+
+    private static float divide(int number1, int number2) {
+        if (number2 == 0) {
+            System.out.println("division by zero is not allowed!");
+        }
+        else {
+            float result = (float)number1 / number2;
+            return result;
+        }
+
+        return 0;
     }
 
     private static int add(int number1, int number2) {

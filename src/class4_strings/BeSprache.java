@@ -9,7 +9,7 @@ public class BeSprache {
 
         String txt = sc.nextLine().toLowerCase();
         System.out.println(txt);
-        System.out.printf("%s\n", txt.replaceAll("([aeiouäöü])", "$1b$1").toLowerCase());
+        System.out.printf("%s\n", txt.replaceAll("([aeiouäöü])", "$1b$1"));
 
         sc.close();
     }
