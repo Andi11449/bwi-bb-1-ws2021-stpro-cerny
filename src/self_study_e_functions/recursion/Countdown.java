@@ -16,10 +16,12 @@ public class Countdown {
     private static void countdown(int n) {
         if (n < 0) {
             System.out.println("boom!");
-            return;
+            //return;
         }
-        System.out.println(n);
-        countdown(n-1);
+        else {
+            System.out.println(n);
+            countdown(n-1);
+        }
     }
 
     private static void countdown2(int n) {

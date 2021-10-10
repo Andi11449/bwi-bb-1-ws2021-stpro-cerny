@@ -16,16 +16,28 @@ public class Area {
         area = calculateArea(width2, height2);
         System.out.println(area);
 
+        area = calculateArea(width, height2);
+        System.out.println(area);
+
         //calls the third function because only one double argument is passed
         area = calculateArea(radius);
         System.out.println(area);
     }
 
     public static double calculateArea(int width, int height){
-        return (double) width * height;
+        int area = width * height;
+        return (double) area;
     }
 
     public static double calculateArea(double width, double height){
+        return width * height;
+    }
+
+    public static double calculateArea(int width, double height){
+        return width * height;
+    }
+
+    public static double calculateArea(double width, int height){
         return width * height;
     }
 
