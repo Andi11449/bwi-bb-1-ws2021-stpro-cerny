@@ -6,7 +6,8 @@ public class Demo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //int [] arr = getLinearFillArray(sc);
-        int [] arr = getRandomFillArray(sc);
+        //int[] arr = getRandomFillArray(sc);
+        int[] arr = {1, 20, 3, -4, 10};
 
         print(arr);
 

@@ -1,6 +1,9 @@
 package class5_functions;
 
+import java.util.Scanner;
+
 public class Area {
+
     public static void main(String[] args){
         int width = 2;
         int height = 3;
@@ -25,6 +28,7 @@ public class Area {
     }
 
     public static double calculateArea(int width, int height){
+        width *= 2;
         int area = width * height;
         return (double) area;
     }
