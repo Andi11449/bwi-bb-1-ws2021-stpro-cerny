@@ -43,14 +43,11 @@ public class ChessDemo {
     }
 
     private static void print(char[][] chessBoard) {
-        String text = "";
         for(int row=0; row < chessBoard.length; row++) {
             for(int column=0; column < chessBoard[row].length; column++) {
-                text +="[" + chessBoard[row][column] + "] ";
+                System.out.print("[" + chessBoard[row][column] + "] ");
             }
-            text += "\n";
+            System.out.println();
         }
-
-        System.out.print(text);
     }
 }

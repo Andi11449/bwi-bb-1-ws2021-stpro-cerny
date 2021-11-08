@@ -25,20 +25,44 @@ public class Calculator {
             System.out.print("Select operation: ");
             int op = sc.nextInt();
 
-            if(op > 0 && op < 5) {
-                System.out.print("Select 2nd value: ");
-                int secondValue = sc.nextInt();
-                if (op == 1) value = add(value, secondValue);
-                if (op == 2) value = subtract(value, secondValue);
-                if (op == 3) value = multiply(value, secondValue);
-                if (op == 4) value = power(value, secondValue);
-            }
-            else if(op == 5) {
-                value = factorial(value);
-            }
-            else {
+            if(op <= 0 || op > 5)
                 break;
+
+            int secondValue = 0;
+            if (op > 0 && op < 5) {
+                System.out.print("Select 2nd value: ");
+                secondValue = sc.nextInt();
             }
+
+            // alternative mit switch
+            /*switch (op) {
+                case 1:
+                    value = add(value, secondValue);
+                    break;
+                case 2:
+                    value = subtract(value, secondValue);
+                    break;
+                case 3:
+                    value = multiply(value, secondValue);
+                    break;
+                case 4:
+                    value = power(value, secondValue);
+                    break;
+                case 5:
+                    value = factorial(value);
+                    break;
+            }*/
+
+            if (op == 1)
+                value = add(value, secondValue);
+            else if (op == 2)
+                value = subtract(value, secondValue);
+            else if (op == 3)
+                value = multiply(value, secondValue);
+            else if (op == 4)
+                value = power(value, secondValue);
+            else if(op == 5)
+                value = factorial(value);
         }
 
         sc.close();
@@ -46,6 +70,8 @@ public class Calculator {
 
     public static int add(int value, int secondValue) {
         return value + secondValue;
+        //int sum = value + secondValue;
+        //return sum;
     }
 
     public static int subtract(int value, int secondValue) {
@@ -57,8 +83,8 @@ public class Calculator {
     }
 
     public static int power(int value, int secondValue) {
-        int result = value;
-        for(int i=1; i < secondValue; i++)
+        int result = 1;
+        for(int i=0; i < secondValue; i++)
             result *= value;
         return result;
     }

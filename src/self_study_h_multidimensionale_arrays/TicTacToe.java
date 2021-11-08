@@ -9,12 +9,18 @@ public class TicTacToe {
     }
 
     public static char[][] createField(){
-        char[][] field = new char[3][3];
+        char[][] field = {
+                {'_','_','_'},
+                {'_','_','_'},
+                {'_','_','_'}
+        };
+
+        /*char[][] field = new char[3][3];
         for(int i = 0; i < field.length; i++){
             for(int j = 0; j < field[0].length; j++){
                 field[i][j] = '_';
             }
-        }
+        }*/
         return field;
     }
 
