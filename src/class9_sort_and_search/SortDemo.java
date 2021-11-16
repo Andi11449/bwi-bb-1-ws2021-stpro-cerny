@@ -114,7 +114,7 @@ public class SortDemo {
             /* with each run one more number is fixed and */
             /* has not to be checked in the next run (-i) */
             for (int j = 1; j < numbers.length - i; j++){
-                /* if the left number is smaller then swap */
+                /* if the left number is greater then swap */
                 if (numbers[j - 1] > numbers[j]) {
                     swap(numbers, j - 1, j);
                     swapped = true;
@@ -123,6 +123,7 @@ public class SortDemo {
             i++;
         } while (swapped);
     }
+
 
     public static void insertion(int numbers[]) {
         /* i is the first idx of unsorted partition */
