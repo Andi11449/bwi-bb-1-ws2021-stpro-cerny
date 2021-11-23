@@ -1,6 +1,10 @@
 package class10_compound_data_types.person_demo;
 
+import java.util.Scanner;
+
 public class Main {
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         Person[] persons = new Person[3];
@@ -12,12 +16,25 @@ public class Main {
         persons[2].dateOfBirth.year = 2000;
 
         printPersons(persons);
+
+        sc.close();
     }
 
     private static void printPersons(Person[] persons) {
         for (Person p : persons ) {
             printPerson(p);
         }
+    }
+
+    private static Person scanPerson(){
+        System.out.print("Vorname: ");
+        String fn = sc.next();
+        System.out.print("Nachname: ");
+        String ln = sc.next();
+
+        Person p = createPerson(fn, ln, 'M', 1, 1, 1999);
+
+        return p;
     }
 
     private static Person createPerson(String fn, String ln, char sex, int dobDay, int dobMonth, int dobYear) {
