@@ -49,4 +49,63 @@ public class Main {
 
         return head;
     }
+
+    public static int size(ListNode head){
+        int i = 0;
+        while (head != null){
+            head = head.next;
+            i++;
+        }
+        return i;
+    }
+
+    public static void printOdd(ListNode head){
+        int i = 0;
+        while (head != null){
+            if(i % 2 == 0)
+                System.out.println(head.data);
+            head = head.next;
+            i++;
+        }
+    }
+
+    public static int sum(ListNode head){
+        int sum = 0;
+        while (head != null){
+            sum += head.data;
+            head = head.next;
+        }
+        return sum;
+    }
+
+    public static int evenSum(ListNode head){
+        int sum = 0;
+        while (head != null){
+            if(head.data % 2 == 0)
+                    sum += head.data;
+            head = head.next;
+        }
+        return sum;
+    }
+
+    public static void doubleOrHalf(ListNode head){
+        while (head != null){
+            if(head.data % 2 == 0)
+                head.data /= 2;
+            else
+                head.data *= 2;
+            head = head.next;
+        }
+    }
+
+    public static int[] toArray(ListNode head){
+        int[] arr = new int[size(head)];
+
+        for(int i=0; i < arr.length; i++){
+            arr[i] = head.data;
+            head = head.next;
+        }
+
+        return arr;
+    }
 }
