@@ -3,7 +3,6 @@ package self_study_l_stack_queue.linked_list_2.billa_problem;
 import java.util.Scanner;
 
 class Person {
-
     String name;
     Person next;
 }
@@ -33,6 +32,7 @@ public class Main {
     public static Person remove_head(PersonList list) {
         if (list.head == null)
             return null;
+
         Person cur = list.head;
         list.head = cur.next;
 
@@ -99,13 +99,14 @@ public class Main {
                     if (personen == null)
                         break;
 
+                    Person p = remove_head(personen);
+
                     if (count(kassa1) > count(kassa2)) {
-                        add_tail(kassa2, personen.head.name);
+                        add_tail(kassa2, p.name);
                     } else {
-                        add_tail(kassa1, personen.head.name);
+                        add_tail(kassa1, p.name);
                     }
 
-                    remove_head(personen);
                     break;
                 case "1":
                     // kassa1
