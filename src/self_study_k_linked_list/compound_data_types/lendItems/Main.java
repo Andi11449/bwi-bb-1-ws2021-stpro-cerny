@@ -222,8 +222,8 @@ public class Main {
      * Note: any two null-Dates are equal and any null-Dates goes before any
      * non-null Date.
      *
-     * @param it1
-     * @param it2
+     * @param d1
+     * @param d2
      * @return
      */
     public static int compare(Date d1, Date d2) {
@@ -325,8 +325,8 @@ public class Main {
      * two Dates are equal if and only if ALL their values are equal.
      *
      *
-     * @param it1
-     * @param it2
+     * @param d1
+     * @param d2
      * @return
      */
     public static boolean equals(Date d1, Date d2) {
