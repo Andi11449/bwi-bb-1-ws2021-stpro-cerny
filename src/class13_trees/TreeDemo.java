@@ -39,6 +39,10 @@ public class TreeDemo {
         System.out.println("\nPostorder first:");
         postorder(bst);
         System.out.printf("\nHeight: %d", height(bst));
+        System.out.printf("\nCount: %d", count(bst));
+        System.out.printf("\ncountNotLeaves: %d", countNotLeaves(bst));
+        System.out.printf("\nSumme: %d", sum(bst));
+        System.out.printf("\nMin: %d", min(bst));
     }
 
     private static BSTNode insert(BSTNode bst, int data) {
@@ -73,6 +77,32 @@ public class TreeDemo {
             return 0;
         return Math.max(height(bst.left), height(bst.right)) + 1;
     }
+
+    public static int count(BSTNode bst) {
+        if (bst == null)
+            return 0;
+        return count(bst.left) + count(bst.right) + 1;
+    }
+
+    public static int sum(BSTNode bst) {
+        if (bst == null)
+            return 0;
+        return sum(bst.left) + sum(bst.right) + bst.data;
+    }
+
+    public static int min(BSTNode bst) {
+        if (bst == null)
+            return Integer.MAX_VALUE;
+        return Math.min(Math.min(min(bst.left), min(bst.right)), bst.data);
+    }
+
+    public static int countNotLeaves(BSTNode bst) {
+        if (bst == null || (bst.left == null && bst.right == null))
+            return 0;
+        return countNotLeaves(bst.left) + countNotLeaves(bst.right) + 1;
+    }
+
+
 
     public static void preorder(BSTNode bst) {
         if (bst == null)
