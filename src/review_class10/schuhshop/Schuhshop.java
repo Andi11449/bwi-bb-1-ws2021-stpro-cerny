@@ -9,7 +9,7 @@ class Node {
 
 class SchuhmodellLinkedList {
     Node head;
-    int size;
+    int size = 0;
 }
 
 class KundenArrayList {
