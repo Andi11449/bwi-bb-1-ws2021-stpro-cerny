@@ -15,7 +15,7 @@ public class LinkedListDemo {
 
         print(list);
 
-        bubble(list);
+        insertion(list);
 
         print(list);
 
@@ -43,6 +43,22 @@ public class LinkedListDemo {
             }
             i++;
         } while (swapped);
+    }
+
+    public static void insertion(LinkedList list) {
+        /* i is the first idx of unsorted partition */
+        for (int i=1; i<list.size; i++) {
+            int j=i;
+            /* tmp holds value of next element to insert */
+            int tmp=getNode(list, i).data;
+            /* find correct position for tmp */
+            while (j>0 && tmp < getNode(list, j - 1 ).data) {
+                /* on the way there shift right */
+                getNode(list, j).data = getNode(list, j - 1).data;
+                j--;
+            }
+            getNode(list, j).data = tmp;
+        }
     }
 
     /*public static void swap(LinkedList list, int i, int j) {
