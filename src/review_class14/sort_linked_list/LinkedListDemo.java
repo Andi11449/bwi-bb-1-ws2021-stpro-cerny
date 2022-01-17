@@ -58,6 +58,8 @@ public class LinkedListDemo {
                 //if (list[j - 1] > list[j]) {
                 ListNode first = getNode(list, j - 1);
                 ListNode second = getNode(list, j);
+                //int distance = Integer.compare(first.data, second.data);
+                //if (distance > 0)
                 if (first.data > second.data) {
                     swap(list, j - 1, j);
                     /* swap implemented in bubble function */
@@ -211,6 +213,15 @@ public class LinkedListDemo {
     private static ListNode getNode(LinkedList list, int pos) {
         if(pos < 0 || pos >= list.size)
             return null;
+
+        // Alternative
+        // int i = 0;
+        // for(ListNode cur = list.head; cur != null; cur = cur.next){
+        //     if(i == pos){
+        //         return cur;
+        //     }
+        //     i++;
+        // }
 
         ListNode current = list.head;
         for(int i = 0; i < pos; i++){

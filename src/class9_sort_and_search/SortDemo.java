@@ -124,6 +124,31 @@ public class SortDemo {
         } while (swapped);
     }
 
+    public static void bubble(String name[]) {
+        boolean swapped;
+        int i=0;
+        do {
+            swapped = false;
+            for (int j = 1; j < name.length - i; j++){
+                // use compareTo function to get a distance between to strings
+                // the distance is negative if name[j-1] is before name[j] in the alphabet,
+                // positve if name[j-1] is after name[j] in the alphabet,
+                // and 0 if they are the same.
+                // for numbers similar methods exist like Float.compare() or Integer.compare()
+                int distance = name[j-1].compareTo(name[j]);
+                if (distance > 0) {
+                    // swap operation without additional function (in this case for Strings)
+                    String tmp = name[j-1];
+                    name[j-1] = name[j];
+                    name[j] = tmp;
+
+                    swapped = true;
+                }
+            }
+            i++;
+        } while (swapped);
+    }
+
 
     public static void insertion(int numbers[]) {
         /* i is the first idx of unsorted partition */
@@ -132,7 +157,7 @@ public class SortDemo {
             /* tmp holds value of next element to insert */
             int tmp=numbers[i];
             /* find correct position for tmp */
-            while (j>0 && tmp<numbers[j-1]) {
+            while (j>0 && tmp < numbers[j-1]) {
                 /* on the way there shift right */
                 numbers[j]=numbers[j-1];
                 j--;
